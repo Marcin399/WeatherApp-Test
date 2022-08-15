@@ -59,5 +59,4 @@ struct ListView: View {
             .onAppear{viewModel.allAviableCites = viewModel.parseData()}
         }
     }
-    
 }

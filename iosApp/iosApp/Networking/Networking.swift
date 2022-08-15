@@ -8,6 +8,7 @@
 
 import Alamofire
 import Foundation
+import shared
 
 class Networking : ObservableObject {
     
