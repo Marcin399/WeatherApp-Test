@@ -10,7 +10,7 @@ import Alamofire
 import Foundation
 import shared
 
-class Networking : ObservableObject {
+class Networking {
     
     func fetchData(_ city :String, _ completionhandler: @escaping (_ data : APIResponseDataModel) -> ()) {
         let url = "https://api.openweathermap.org/data/2.5/weather?q=\(city)&units=metric&appid=45bc59854b598288f7a5e310e4a6dd7f"

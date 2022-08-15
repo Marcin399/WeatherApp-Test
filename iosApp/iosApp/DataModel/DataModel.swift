@@ -18,9 +18,14 @@ struct APIResponseDataModel: Decodable, Identifiable {
     let id = UUID()
     var main : main
     var name : String
+    var weather : [weather]
 }
 
 struct main : Decodable {
     var temp : Double
    
+}
+
+struct weather : Decodable {
+    var description : String
 }
