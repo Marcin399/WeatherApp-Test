@@ -15,18 +15,18 @@ struct ListView: View {
                         }){ Text(city.name)}}
                                         
                     if viewModel.searchText == "" {
-                        ForEach(viewModel.arrayOfCitysAddToList){ country in
+                        ForEach(viewModel.arrayOfCitysAddToList){ city in
                             HStack {
-                                NavigationLink(destination: DetailView(oneCityDataForDetailView: country), label: {
-                                    Text(country.name)
+                                NavigationLink(destination: DetailView(oneCityDataForDetailView: city), label: {
+                                    Text(city.name)
                                     Spacer()
-                                    Text("\(Int(country.main.temp))°C")
+                                    Text("\(Int(city.main.temp))°C")
                                     Rectangle()
                                         .frame(width: 1, height: 50, alignment: .center)
                                         .foregroundColor(.clear)
                                 })
                             }
-                        }.onDelete { IndexSet in viewModel.deleteCityFromLisy(IndexSet)}
+                        }.onDelete { IndexSet in viewModel.deleteCityFromList(IndexSet)}
                     }
                 }.background(.clear)
                  .navigationTitle("Country list")

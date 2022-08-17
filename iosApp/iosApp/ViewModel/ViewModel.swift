@@ -12,7 +12,7 @@ class ViewModel : ObservableObject {
     @Published var arrayOfCitysAddToList : [APIResponseDataModel] = []
     @Published var allAviableCites : [cityListDataModel] = []
     @Published var searchText : String = ""
-    @Published var testReturn = Networking()
+    @Published var networking = Networking()
     
     var searchResults: [cityListDataModel] {
         if searchText.isEmpty {
@@ -24,7 +24,7 @@ class ViewModel : ObservableObject {
         }
     }
     
-    func deleteCityFromLisy(_ indexSet: IndexSet){
+    func deleteCityFromList(_ indexSet: IndexSet){
         self.arrayOfCitysAddToList.remove(atOffsets: indexSet)
     }
     
@@ -40,7 +40,7 @@ class ViewModel : ObservableObject {
     
     func searchListAction(_ city: String){
         self.searchText = ""
-        self.testReturn.fetchData(city.replacingOccurrences(of: " ", with: "%20").lowercased(), { [weak self] returndata in
+        self.networking.fetchData(city.replacingOccurrences(of: " ", with: "%20").lowercased(), { [weak self] returndata in
             self?.arrayOfCitysAddToList.append(returndata)
         })
     }

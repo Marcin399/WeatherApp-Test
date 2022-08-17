@@ -19,7 +19,8 @@ class Networking {
                 switch response.result {
                 case .success(let JSON):
                     completionhandler(JSON)
-                case .failure(let error): print(error)
+                case .failure(let error):
+                    print(error)
                 }
             }
     }
